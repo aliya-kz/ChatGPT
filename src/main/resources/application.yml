@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/chat_gpt_low
+    username: postgres
+    password: 0604
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      show-sql: true
