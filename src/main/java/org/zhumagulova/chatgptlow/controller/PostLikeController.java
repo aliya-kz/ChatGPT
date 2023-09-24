@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import org.zhumagulova.chatgptlow.service.PostLikeService;
 
 @RestController
-@RequestMapping("/postslikes")
+@RequestMapping("/postlikes")
 public class PostLikeController {
     @Autowired
     private PostLikeService postLikeService;

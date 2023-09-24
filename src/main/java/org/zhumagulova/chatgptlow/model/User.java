@@ -2,6 +2,7 @@ package org.zhumagulova.chatgptlow.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,5 +22,8 @@ public class User {
     @OneToMany
     private List<Post> posts;
 
-    // Constructors, getters, and setters
+    public User(Long id) {
+        this.id = id;
+    }
+// Constructors, getters, and setters
 }

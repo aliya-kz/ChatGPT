@@ -1,6 +1,7 @@
 package org.zhumagulova.chatgptlow.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class UserFollow {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +24,8 @@ public class UserFollow {
     @ManyToOne
     private User following;   // User who is being followed
 
-    public UserFollow(long myId, Long authorId) {
-        myId = follower.getId();
-        authorId = following.getId();
+    public UserFollow(User follower, User following) {
+        this.follower = follower;
+        this.following = following;
     }
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.zhumagulova.chatgptlow.model.Post;
 import org.zhumagulova.chatgptlow.model.User;
+import org.zhumagulova.chatgptlow.model.UserFollow;
 import org.zhumagulova.chatgptlow.service.UserFollowService;
 import org.zhumagulova.chatgptlow.service.UserService;
 
@@ -35,8 +36,8 @@ public class UserController {
     }
 
     @PostMapping("/{authorId}")
-    public void followUser (@RequestParam Long myId, @PathVariable Long authorId) {
-        userFollowService.followUser (myId, authorId);
+    public UserFollow followUser (@RequestParam Long myId, @PathVariable Long authorId) {
+        return userFollowService.followUser (myId, authorId);
     }
     // Add more endpoints as needed
 }
