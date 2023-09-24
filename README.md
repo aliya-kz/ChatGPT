@@ -14,4 +14,4 @@ Prompts to get dependencies, classes, tests, etc.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/social-media-app.git
+   git clone https://github.com/aliya-kz/ChatGPT.git
