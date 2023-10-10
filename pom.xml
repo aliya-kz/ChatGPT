@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.zhumagulova</groupId>
-    <artifactId>chatgptlow</artifactId>
+    <artifactId>SocialMediaApp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>social-media-api</name>
-    <description>RESTful API for a simple social media application</description>
+    <description>RESTful API for a simple social media application (ChatGpt Low Complexity task)</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -35,18 +35,20 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Starter -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
 
-        <!-- Spring Web Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
         <!-- Spring Data JPA with Hibernate -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

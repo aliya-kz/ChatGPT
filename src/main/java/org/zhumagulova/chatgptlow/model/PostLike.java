@@ -18,7 +18,5 @@ public class PostLike {
     private User user; // The user who liked the post
 
     @ManyToOne
-    private Post post; // The post that was liked
-
-    // Constructors, getters, and setters
+    private Post post;
 }

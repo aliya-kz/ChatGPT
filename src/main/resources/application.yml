@@ -7,3 +7,11 @@ spring:
     hibernate:
       ddl-auto: validate
       show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always

@@ -20,7 +20,6 @@ public class PostService {
     private UserRepository userRepository;
 
     public Post createPost(Long authorId, Post post) {
-
         User author = userRepository.findById(authorId).orElseThrow();
         post.setAuthor(author);
         return postRepository.save(post);
@@ -30,5 +29,4 @@ public class PostService {
         return postRepository.findByAuthor(author);
     }
 
-    // Add more methods as needed
 }

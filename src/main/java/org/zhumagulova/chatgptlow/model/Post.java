@@ -1,6 +1,5 @@
 package org.zhumagulova.chatgptlow.model;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,9 +16,7 @@ public class Post {
     private String title;
     private String body;
 
-
     @ManyToOne
     private User author;
 
-    // Constructors, getters, and setters
 }

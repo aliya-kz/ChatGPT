@@ -6,6 +6,6 @@ import org.zhumagulova.chatgptlow.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    // Custom queries can be defined here
+
 }
 
