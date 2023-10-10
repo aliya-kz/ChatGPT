@@ -8,7 +8,6 @@ import org.zhumagulova.socialmediaapp.metrics.HealthMetrics;
 @RestController
 @RequestMapping("/actuator/health")
 public class HealthController {
-
     private final HealthMetrics healthMetrics;
 
 
