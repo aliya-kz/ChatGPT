@@ -13,11 +13,12 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class PostService {
-    @Autowired
-    private PostRepository postRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private final PostRepository postRepository;
+
+    @Autowired
+    private final UserRepository userRepository;
 
     public Post createPost(Long authorId, Post post) {
         User author = userRepository.findById(authorId).orElseThrow();

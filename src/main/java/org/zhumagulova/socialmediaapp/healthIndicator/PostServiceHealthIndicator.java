@@ -3,26 +3,28 @@ package org.zhumagulova.socialmediaapp.healthIndicator;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
-import org.zhumagulova.socialmediaapp.dao.PostRepository;
-import org.zhumagulova.socialmediaapp.dao.UserRepository;
+import org.zhumagulova.socialmediaapp.model.User;
+import org.zhumagulova.socialmediaapp.service.PostService;
+
+import java.util.List;
 
 @Component
 public class PostServiceHealthIndicator implements HealthIndicator {
 
-    private final PostRepository postRepository;
-    private final UserRepository userRepository;
+    private final static long ID = 1L;
+    private final PostService postService;
 
-    public PostServiceHealthIndicator(PostRepository postRepository, UserRepository userRepository) {
-        this.postRepository = postRepository;
-        this.userRepository = userRepository;
+    public PostServiceHealthIndicator(PostService postService) {
+        this.postService = postService;
     }
 
     @Override
     public Health health() {
-        if (postRepository != null && userRepository != null) {
+        User user = new User(ID);
+        if (postService.getPostsByAuthor(user) instanceof List) {
             return Health.up().build();
         } else {
-            return Health.down().withDetail("error", "No dependencies found").build();
+            return Health.down().withDetail("error", "Health check not passed").build();
         }
     }
 }
